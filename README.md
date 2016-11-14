@@ -24,12 +24,12 @@ Put the xml in the layout
 
 And use it
 
-CircularProgressImageView progressImageView = (CircularProgressImageView)
-                findViewById(R.id.progress_image);
-[after some async task...]
-
-progressImageView.doneLoagingAnimation(R.color.colorAccent,
-                                BitmapFactory.decodeResource(getResources(), R.drawable.ic_done_white_48dp));
+    CircularProgressImageView progressImageView = (CircularProgressImageView)
+                    findViewById(R.id.progress_image);
+    [after some async task...]
+    
+    progressImageView.doneLoagingAnimation(R.color.colorAccent,
+                                    BitmapFactory.decodeResource(getResources(), R.drawable.ic_done_white_48dp));
 
 ##Install
 
