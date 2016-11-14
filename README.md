@@ -1,3 +1,5 @@
+[ ![Download](https://api.bintray.com/packages/lehen01/maven/ImageViewCircularProgress/images/download.svg) ](https://bintray.com/lehen01/maven/ImageViewCircularProgress/_latestVersion)
+
 ## ImageViewCircularProgress
 
 ImageView with a circular progress spinner
