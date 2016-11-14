@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import br.com.simplepass.circularprogressimagelib.CircularAnimatedDrawableImage;
 import br.com.simplepass.circularprogressimagelib.CircularProgressImageView;
 
 public class MainActivity extends AppCompatActivity {

@@ -5,7 +5,6 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
@@ -14,7 +13,6 @@ import android.graphics.RectF;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
@@ -125,8 +123,6 @@ public class CircularAnimatedDrawableImage extends Drawable implements Animatabl
      */
     @Override
     public void draw(Canvas canvas) {
-        Log.d("Drwable", "Passou aqui!");
-
         float startAngle = mCurrentGlobalAngle - mCurrentGlobalAngleOffset;
         float sweepAngle = mCurrentSweepAngle;
         if (!mModeAppearing) {
@@ -186,7 +182,6 @@ public class CircularAnimatedDrawableImage extends Drawable implements Animatabl
         mValueAnimatorAngle.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                Log.d("Drwable", "Passou no animator!");
                 setCurrentGlobalAngle((float)animation.getAnimatedValue());
                 invalidateSelf();
                 mAnimatedView.invalidate();
@@ -206,7 +201,6 @@ public class CircularAnimatedDrawableImage extends Drawable implements Animatabl
         mValueAnimatorSweep.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                Log.d("Drwable", "Passou no animator!");
                 setCurrentSweepAngle((float)animation.getAnimatedValue());
                 invalidateSelf();
                 mAnimatedView.invalidate();
