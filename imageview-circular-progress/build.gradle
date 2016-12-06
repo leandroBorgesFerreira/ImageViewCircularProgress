@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 //Bintray depends on this global variable to set the library version!
-version = '1.0.3'
+version = '1.0.4'
 group = 'br.com.simplepass'
 
 android {
@@ -40,7 +40,7 @@ install {
             packaging 'aar'
             groupId 'br.com.simplepass'
             artifactId 'imageview-circular-progress'
-            version '1.0.3'
+            version '1.0.4'
 
             licenses {
                 license {
