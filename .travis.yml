@@ -1,0 +1,24 @@
+
+language: android
+jdk: oraclejdk8
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - lynx
+
+android:
+  components:
+  - platform-tools
+  - tools
+  - build-tools-24.0.1
+  - android-23
+  - extra-android-m2repository
+script: 
+  - ./gradlew -PbintrayUser="${bintrayUser}" -PbintrayKey="${bintrayKey}" build bintrayUpload --stacktrace --info
+  - if [ -f /home/travis/build/leandroBorgesFerreira/MoreCLoseButton/app/build/outputs/lint-results-debug.html ]; then lynx -dump /home/travis/build/leandroBorgesFerreira/MoreCLoseButton/app/build/outputs/lint-results-debug.html; fi
+env:
+  global:
+  - secure: CIUoiXYc1x0UYHo3P1zauv6Rocl/FQdb/jCM4WiMui/z0RrtmLBVM3vCjEDamUQ8yPsWucM5ecZZjb7DKbJaP2CZGTiY3AF1SKbapmsIjNAWyJov5nRb7drf+adI6Q7MqGgzYtd5+4oM7k+dGd8jhNa0zvxwbQ4VT8icyg6WwJ2FDtOZ9QCrobyfTXlMYgqZAA3Kvxh83BPUr6UMidwyxpgkrWY6jDsTDQZAYkWjpSCKcRD8Hi9GUHastVFNUSq6XwwVV7iP6towdPRdcgeLwg6OnjqCYVJ7t9cGRCo2doIlzE2eBme9xMtYCisKF5eJ65gcvdYNktYc8aho5zpyM3JYnJjEA7Of3Fo3K++jNlZRMum7+akaA+7nA8eRRWQuZMZK7P+xDqi6jK7SEb8M86mEuNgu04UhoIvP+Ep2qbIAGUBPZGq1HsVQSuOWMz9i2bFzBB+EAeD8w86ydbLil+lDxxtPkUyfJhostYQc/p01YwEBj5X2eFT19JAAAx8EiyCLVqYvE9tVbi0Z5u2msLncXCPe5siIjfJSHi4dfFzY7xJ4SpSeEXdjq18JcIh2XnCU1i7TtsUKHhNtFbyaiez9jH44OhIS6uhHYanwKBpMtabM1gIU9BG/WCPTZJoQKp2VDN261ZuUeqV43G5x+M9IoghUfbGRKLeQ/rdi19U=
+  - secure: s1uwFrd6pPe/c6NxncAlj/bz5zaQXHYsMKxifuurPU2sUnxWd8Ms2AgLzySCgJ8nWyrr1uB8Z+KXa4QjI9xe6Ny3/N5+xNBEPGSCjlfWUnxtKpA7R3scW6hMfS3k1NwRIaALKQHpTuwTQkL4rPuHrgYw1bcm8yD3F6qMvVQlWRjhGFaebiQMToCJ8Bu71+tTpYXRfB5Hb2REonmaDnvzQun64b2M0X82RnyIEE+GRSzyLJ4GgtAX37w/9BBYRWLrK3xJpMd8Y9tK10lDoy0IADwYT8Td3W59A1Qt3jqWI5sDptyoIRFb2B3BOgVmB7xTDNDOXfKuZE5r4qF1Yef+tiOSOH3snMWvxfKrWFnXC7GJ192oZX3OsuNS001URyorcM6oCJ8FHBXKpoT+AYohKBGxBDeemMAq5DLhL9Z1tYK2lV8m3iSqcypDpqzVxslIG+uixilbSR1myUwgz6GC5sCCfCSbDiYPPc2uxJoGYAkiqT8UNX/Z++tvNRoIu4odRQcgPqGzBXWGYbRPpqQkffmYDkgfL6aL2Eo1FJCVEciZ7YIC11eaTTLMkXcK4A+Y02sOUUMDB6UdUeenoXSfFUyyjsghDmQ+vvl4DODCp9RuvCtAa7EJlGHkpXVJanUqWUR2QlAu90uOrXPBiW0RtPyUDKb610CJqeIChXC4rmg=

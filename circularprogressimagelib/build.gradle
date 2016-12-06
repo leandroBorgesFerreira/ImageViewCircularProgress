@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 
-ext {
-    PUBLISH_GROUP_ID='br.com.simplepass'
-    PUBLISH_ARTIFACT_ID='imageview-circular-progress'
-    PUBLISH_VERSION='1.0.1'
-}
+//Bintray depends on this global variable to set the library version!
+version = '1.0.2'
+group = 'br.com.simplepass'
 
 android {
     compileSdkVersion 23
@@ -24,10 +24,68 @@ android {
     }
 }
 
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            name 'ImageViewCircularProgress'
+            description 'A library for imageview with progress spinner out of the box'
+            url 'https://github.com/leandroBorgesFerreira/ImageViewCircularProgress'
+            inceptionYear '2016'
+
+            packaging 'aar'
+            groupId 'br.com.simplepass'
+            artifactId 'imageview-circular-progress'
+            version '1.0.2'
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+            scm {
+                connection 'https://github.com/leandroBorgesFerreira/ImageViewCircularProgress.git'
+                url 'https://github.com/leandroBorgesFerreira/ImageViewCircularProgress'
+
+            }
+            developers {
+                developer {
+                    name 'Leandro Borges Ferreira'
+                }
+            }
+        }
+    }
+}
+
+// Configure gradle-bintray-plugin (for publishing releases)
+bintray {
+    configurations = ['archives']
+
+    publish = true
+
+    pkg {
+        repo = 'maven'
+        name = 'ImageViewCircularProgress'
+        userOrg = 'lehen01'
+        licenses = ['Apache-2.0']
+        labels = ['customview', 'animation']
+        websiteUrl = 'https://github.com/leandroBorgesFerreira/ImageViewCircularProgress'
+        issueTrackerUrl = 'https://github.com/leandroBorgesFerreira/ImageViewCircularProgress/issues'
+        vcsUrl = 'https://github.com/leandroBorgesFerreira/ImageViewCircularProgress.git'
+        publicDownloadNumbers = true
+    }
+
+}
+
+if (project.hasProperty('bintrayUser') && project.hasProperty('bintrayKey')) {
+    bintray.user = project.bintrayUser
+    bintray.key = project.bintrayKey
+}
+
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.0.1'
 }
-
-apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'

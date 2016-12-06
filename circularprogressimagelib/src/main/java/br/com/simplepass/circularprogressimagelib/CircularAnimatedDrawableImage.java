@@ -64,7 +64,7 @@ public class CircularAnimatedDrawableImage extends Drawable implements Animatabl
         mPaintBg = new Paint();
         mPaintBg.setAntiAlias(true);
         mPaintBg.setStyle(Paint.Style.FILL);
-        mPaintBg.setColor(ContextCompat.getColor(context, R.color.progress_back_ground));
+        mPaintBg.setColor(ContextCompat.getColor(context, R.color.progress_background));
 
         setupAnimations();
     }
@@ -141,7 +141,7 @@ public class CircularAnimatedDrawableImage extends Drawable implements Animatabl
 
     @Override
     public void setAlpha(int alpha) {
-        mPaint.setAlpha(alpha);
+        //mPaint.setAlpha(alpha);
     }
 
     @Override
