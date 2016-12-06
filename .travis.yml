@@ -13,7 +13,7 @@ android:
   - android-23
   - extra-android-m2repository
 script:
-- ./gradlew -PbintrayUser="${bintrayUser}" -PbintrayKey="${bintrayKey}" bintrayUpload
+- ./gradlew -PbintrayUser="${bintrayUser}" -PbintrayKey="${bintrayKey}" assemble bintrayUpload
   --stacktrace --info
 env:
   global:
