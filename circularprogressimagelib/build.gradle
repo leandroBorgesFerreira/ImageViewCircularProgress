@@ -24,6 +24,11 @@ android {
     }
 }
 
+if (project.hasProperty('bintrayUser') && project.hasProperty('bintrayKey')) {
+    bintray.user = project.bintrayUser
+    bintray.key = project.bintrayKey
+}
+
 install {
     repositories.mavenInstaller {
         pom.project {
@@ -78,10 +83,7 @@ bintray {
 
 }
 
-if (project.hasProperty('bintrayUser') && project.hasProperty('bintrayKey')) {
-    bintray.user = project.bintrayUser
-    bintray.key = project.bintrayKey
-}
+
 
 
 dependencies {

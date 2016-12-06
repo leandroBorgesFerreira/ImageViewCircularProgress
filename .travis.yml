@@ -17,7 +17,6 @@ android:
   - extra-android-m2repository
 script: 
   - ./gradlew -PbintrayUser="${bintrayUser}" -PbintrayKey="${bintrayKey}" build bintrayUpload --stacktrace --info
-  - if [ -f /home/travis/build/leandroBorgesFerreira/MoreCLoseButton/app/build/outputs/lint-results-debug.html ]; then lynx -dump /home/travis/build/leandroBorgesFerreira/MoreCLoseButton/app/build/outputs/lint-results-debug.html; fi
 env:
   global:
   - secure: CIUoiXYc1x0UYHo3P1zauv6Rocl/FQdb/jCM4WiMui/z0RrtmLBVM3vCjEDamUQ8yPsWucM5ecZZjb7DKbJaP2CZGTiY3AF1SKbapmsIjNAWyJov5nRb7drf+adI6Q7MqGgzYtd5+4oM7k+dGd8jhNa0zvxwbQ4VT8icyg6WwJ2FDtOZ9QCrobyfTXlMYgqZAA3Kvxh83BPUr6UMidwyxpgkrWY6jDsTDQZAYkWjpSCKcRD8Hi9GUHastVFNUSq6XwwVV7iP6towdPRdcgeLwg6OnjqCYVJ7t9cGRCo2doIlzE2eBme9xMtYCisKF5eJ65gcvdYNktYc8aho5zpyM3JYnJjEA7Of3Fo3K++jNlZRMum7+akaA+7nA8eRRWQuZMZK7P+xDqi6jK7SEb8M86mEuNgu04UhoIvP+Ep2qbIAGUBPZGq1HsVQSuOWMz9i2bFzBB+EAeD8w86ydbLil+lDxxtPkUyfJhostYQc/p01YwEBj5X2eFT19JAAAx8EiyCLVqYvE9tVbi0Z5u2msLncXCPe5siIjfJSHi4dfFzY7xJ4SpSeEXdjq18JcIh2XnCU1i7TtsUKHhNtFbyaiez9jH44OhIS6uhHYanwKBpMtabM1gIU9BG/WCPTZJoQKp2VDN261ZuUeqV43G5x+M9IoghUfbGRKLeQ/rdi19U=
