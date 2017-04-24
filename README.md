@@ -35,7 +35,7 @@ And use it
 
 ## Install
 
-    compile 'br.com.simplepass:imageview-circular-progress:1.0.1'
+    compile 'br.com.simplepass:imageview-circular-progress:1.0.5'
 
 
 ## Bugs and Feedback
