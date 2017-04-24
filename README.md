@@ -8,9 +8,9 @@ Android Button that morphs into a loading progress bar.
   - Really simple to use.
   - Progress spinner out-of-box. You don't have to created a progress on top of a ImageView
 
-![enter image description here](https://lh3.googleusercontent.com/-BSmy1Foc3jQ/WBxwU7ktZQI/AAAAAAAAKj0/0BGGGyRyX-gVkuq-vixMOPsGUQ1DI8W0ACLcB/s400/nov-04-2016+09-25-47.gif "nov-04-2016 09-25-47.gif")
+![enter image description here](https://media.giphy.com/media/3o7btRuntGxVq14Joc/giphy.gif)
 
-##Usage
+## Usage
 Put the xml in the layout    
 
     <br.com.simplepass.circularprogressimagelib.CircularProgressImageView
@@ -33,7 +33,7 @@ And use it
     progressImageView.doneLoagingAnimation(R.color.colorAccent,
                                     BitmapFactory.decodeResource(getResources(), R.drawable.ic_done_white_48dp));
 
-##Install
+## Install
 
     compile 'br.com.simplepass:imageview-circular-progress:1.0.1'
 
@@ -45,4 +45,4 @@ For bugs, feature requests, and discussion please use [GitHub Issues](https://gi
 
 
 
-
+> Written with [StackEdit](https://stackedit.io/).
